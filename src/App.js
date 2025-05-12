@@ -34,15 +34,42 @@ function App() {
         <p>GPA/Honors: 3.9, Summa Cum Laude</p>
       </section>
 
-      {/* Work Experience */}
       <section id="experience" className="section">
-        <h2>Work Experience</h2>
-        <h3><strong>Software Engineer at SureScan</strong> <i>(Boxborough, MA)</i></h3>
-        <p>May 2024 - Current</p>
-        <h3><strong>Human-Robot Interaction Research Intern at UML HRI Lab</strong> <i>(Lowell, MA)</i></h3>
-        <p>June 2022 - August 2022</p>
-        <h3><strong>Sales Associate at TJMaxx</strong> <i>(Hudson, MA)</i></h3>
-        <p>October 2019 - March 2020</p>
+      <h2>Work Experience</h2>
+        <div className="experience-entry">
+          <div className="experience-header">
+            <h3><strong>Software Engineer at SureScan</strong> <i>(Boxborough, MA)</i></h3>
+            <span className="date">May 2024 – Current</span>
+          </div>
+
+          <div className="experience-description">
+          <p><strong>Tasks:</strong></p>
+            <ul>
+              <li>Helped build and integrate Python scripts with QT services in construction of a threat image projection library.</li>
+              <li>Designed a database comparison tool in QT that compares snapshots of database instances, showing data additions, deletions, and insertions to assist QA in debugging.</li>
+              <li>Engineered a QT script with Postgres database integration, automating the verification of test case results for the Detect 1000, improving accuracy and reducing processing time.</li>
+              <li>Implementing various functionality to an Angular web application.</li>
+            </ul>
+          </div>
+
+          <div className="experience-skills">
+           <p><strong>Skills: </strong>Qt, C++, PostgreSQL, Python, AngularJS</p>
+          </div>
+        </div>
+
+        <div className="experience-entry">
+          <div className="experience-header">
+            <h3><strong>Human-Robot Interaction Research Intern at UML HRI Lab</strong> <i>(Lowell, MA)</i></h3>
+            <span className="date">June 2022 – August 2022</span>
+          </div>
+        </div>
+
+        <div className="experience-entry">
+          <div className="experience-header">
+            <h3><strong>Sales Associate at TJMaxx</strong> <i>(Hudson, MA)</i></h3>
+            <span className="date">October 2019 – March 2020</span>
+          </div>
+        </div>
       </section>
 
       {/* Projects */}

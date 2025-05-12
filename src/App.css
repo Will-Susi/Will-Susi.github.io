@@ -64,3 +64,24 @@ html {
 .section a {
   color: #58a6ff;
 }
+
+.experience-entry {
+  margin-bottom: 40px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.experience-header h3 {
+  margin: 0;
+}
+
+.date {
+  color: #8b949e;
+  white-space: nowrap;
+  font-style: italic;
+}
