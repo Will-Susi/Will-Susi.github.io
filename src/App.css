@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+/* Apply dark theme colors */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Navigation */
+.navbar {
+  background-color: #010409;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.App-header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* Sections */
+.section {
+  padding: 40px 20px;
+  border-bottom: 1px solid #30363d;
+}
+
+.section h2 {
+  color: #58a6ff;
+}
+
+.section a {
+  color: #58a6ff;
 }
