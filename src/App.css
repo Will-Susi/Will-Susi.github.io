@@ -1,22 +1,20 @@
-/* Apply dark theme colors */
+/* General Styling */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: #0d1117; 
+  color: #c9d1d9; 
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+/* Top Bar Navigation */
 .navbar {
-  background-color: #010409;
-  padding: 10px 0;
+  background-color: #000000;
+  padding: 5px;
   position: sticky;
   top: 0;
-  z-index: 1000;
 }
 
 .navbar ul {
@@ -24,8 +22,6 @@ html {
   justify-content: center;
   gap: 30px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar a {
@@ -41,43 +37,39 @@ html {
 /* Header */
 .App-header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
   background-color: #161b22;
   border-bottom: 1px solid #30363d;
-}
-
-.App-header h1 {
-  margin: 0;
   font-size: 2.5em;
 }
 
 /* Sections */
 .section {
-  padding: 40px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid #30363d;
+  scroll-margin-top: 60px; /* Keeps section headers visable after top bar navigation */
 }
 
-.section h2 {
+.section h1 {
   color: #58a6ff;
+  margin-bottom: 0;
+  text-align: center;
 }
 
-.section a {
-  color: #58a6ff;
-}
-
-.experience-entry {
+.entry {
   margin-bottom: 40px;
 }
 
-.experience-header {
+.entry-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
+  
 }
 
-.experience-header h3 {
-  margin: 0;
+.entry-header h2 {
+  margin-bottom: 0;
 }
 
 .date {
@@ -85,3 +77,11 @@ html {
   white-space: nowrap;
   font-style: italic;
 }
+
+
+
+
+
+
+
+
