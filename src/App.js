@@ -23,6 +23,7 @@ function App() {
         <p><u>Email</u>: willsusi14@gmail.com</p>
         <p><u>Phone</u>: (978) 549-6089</p>
         <p><u>LinkedIn</u>: <a href="https://linkedin.com/in/will-susi" style={{ color: "#0077b5" }} target="_blank" rel="noreferrer">linkedin.com/in/will-susi</a></p>
+        <p><u>Github</u>: <a href="https://github.com/Will-Susi?tab=repositories" style={{ color: "#0077b5" }} target="_blank" rel="noreferrer">https://github.com/Will-Susi?tab=repositories</a></p>
       </section>
 
       {/* Education */}
