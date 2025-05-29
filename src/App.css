@@ -9,6 +9,60 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Secret Button*/
+.secret-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.secret-button:hover {
+  background-color: rgba(0, 123, 255, 0.8); /* subtle blue */
+  opacity: 1;
+  border-radius: 50%;
+  color: white;
+}
+
+.secret-button::before {
+  content: "🔒";
+}
+
+/* Secret Button Pop-Up */
+.popup-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup-box input {
+  width: 80%;
+  margin: 10px 0;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
 /* Top Bar Navigation */
 .navbar {
   background-color: #000000;
@@ -34,8 +88,8 @@ html {
   text-decoration: underline;
 }
 
-/* Header */
-.App-header {
+/* Portfolio */
+.Portfolio-header {
   text-align: center;
   padding: 20px 20px;
   background-color: #161b22;
@@ -43,7 +97,6 @@ html {
   font-size: 2.5em;
 }
 
-/* Sections */
 .section {
   padding: 20px 20px;
   border-bottom: 1px solid #30363d;
@@ -65,8 +118,13 @@ html {
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
-  
 }
+
+/* .entry-date-and-image {
+  color: #8b949e;
+  white-space: nowrap;
+  font-style: italic;
+} */
 
 .entry-header h2 {
   margin-bottom: 0;

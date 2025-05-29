@@ -1,8 +1,59 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import JobApplicationsPage from './JobApplicationsPage';
 import './App.css';
 
-function App() {
+import fridgieIcon from './assets/fridgie_icon.png'; // adjust path as needed
+
+
+function PortfolioPage() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+
+  const handleSecretClick = () => {
+    setShowPopup(true);
+    setPassword('');
+    setError('');
+  };
+
+  const handlePasswordSubmit = () => {
+    if (password === 'jobs') {
+      navigate('/job-applications');
+    } else {
+      setError('Incorrect password.');
+    }
+  };
+
   return (
-    <div className="App">
+    <div className="Portfolio">
+
+      {/* Secret Button */}
+      <button className="secret-button" onClick={handleSecretClick} />
+
+      {/* Popup Password Prompt */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <h3>Enter Password</h3>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+            {error && <p className="error">{error}</p>}
+            <div className="popup-buttons">
+              <button onClick={handlePasswordSubmit}>Submit</button>
+              <button onClick={() => setShowPopup(false)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation Bar */}
       <nav className="navbar">
         <ul>
@@ -15,7 +66,7 @@ function App() {
       </nav>
 
       {/* Header */}
-      <header className="App-header"> William Susi's Portfolio</header>
+      <header className="Portfolio-header"> William Susi's Portfolio</header>
 
       {/* Contact Info */}
       <section id="contact" className="section">
@@ -99,11 +150,34 @@ function App() {
       {/* Projects */}
       <section id="projects" className="section">
         <h1>Projects</h1>
+
+        <div className="entry">
+          <div className="entry-header">
+            <h2><strong>Portfolio</strong></h2>
+            <span className="date">May 2025 - Current</span>
+          </div>
+
+          <div className="entry-overview">
+            <p><strong><u>Overview</u>: </strong> The portfolio you are seeing now!</p> 
+          </div>
+
+          <div className="entry-skills">
+            <p><strong><u>Skills</u>: </strong>React, JavaScript, HTML, CSS</p>
+          </div>
+        </div>
+
         <div className="entry">
           <div className="entry-header">
             <h2><strong>Fridgie</strong></h2>
             <span className="date">January 2025 - Current</span>
           </div>
+
+          {/* <div className="entry-image">
+            <img 
+              src= {fridgieIcon}
+              alt="Fridgie app screenshot" 
+            />
+          </div> */}
 
           <div className="entry-overview">
             <p><strong><u>Overview</u>: </strong> Fridgie is a mobile application that allows users to virtually track and organize items in their fridge and pantries.</p> 
@@ -223,4 +297,4 @@ function App() {
   );
 }
 
-export default App;
+export default PortfolioPage;
