@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.fa9aaf6a.css",
-    "main.js": "/static/js/main.d3dea1dc.js",
+    "main.js": "/static/js/main.4def02f9.js",
     "static/media/fridgie_icon.png": "/static/media/fridgie_icon.4ce6be7bf3cbdf7f4751.png",
     "index.html": "/index.html",
     "main.fa9aaf6a.css.map": "/static/css/main.fa9aaf6a.css.map",
-    "main.d3dea1dc.js.map": "/static/js/main.d3dea1dc.js.map"
+    "main.4def02f9.js.map": "/static/js/main.4def02f9.js.map"
   },
   "entrypoints": [
     "static/css/main.fa9aaf6a.css",
-    "static/js/main.d3dea1dc.js"
+    "static/js/main.4def02f9.js"
   ]
 }
