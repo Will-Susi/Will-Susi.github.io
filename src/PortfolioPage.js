@@ -93,8 +93,8 @@ function PortfolioPage() {
         <h1>Work Experience</h1>
         <div className="entry">
           <div className="entry-header">
-            <h2><strong>Software Engineer</strong> at SureScan <i>(Boxborough, MA)</i></h2>
-            <span className="date">May 2024 – Current</span>
+            <h2><strong>Software Engineering Intern</strong> at SureScan <i>(Boxborough, MA)</i></h2>
+            <span className="date">May 2024 – June 2025</span>
           </div>
 
           <div className="entry-task">
