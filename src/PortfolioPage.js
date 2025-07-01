@@ -93,7 +93,7 @@ function PortfolioPage() {
         <h1>Work Experience</h1>
         <div className="entry">
           <div className="entry-header">
-            <h2><strong>Software Engineering Intern</strong> at SureScan <i>(Boxborough, MA)</i></h2>
+            <h2><strong>Software Engineering Intern</strong> at SureScan Corporation <i>(Boxborough, MA)</i></h2>
             <span className="date">May 2024 – June 2025</span>
           </div>
 
@@ -287,7 +287,7 @@ function PortfolioPage() {
 
       {/* Techincal Skills */}
       <section id="skills" className="section">
-        <h1>Techical Skills</h1>
+        <h1>Technical Skills</h1>
         <p><u>Programming Languages</u>: C++, Python, Java, SQL, React, JavaScript/TypeScript, HTML, CSS</p>
         <p><u>Tools</u>: QT, Visual Studio Code, Android Studio, Github, SVN, UML</p>
         <p><u>Operating Systems</u>: Linux (Ubuntu, CentOS, RedHat), Windows</p>
