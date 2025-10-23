@@ -6,72 +6,35 @@ import ProjectEntry from './ProjectEntry';
 import './App.css';
 
 function PortfolioPage() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSecretClick = () => {
-    setShowPopup(true);
-    setPassword('');
-    setError('');
-  };
-
-  const handlePasswordSubmit = () => {
-    if (password === 'games') {
-      setError('Correct password.');
-    } else {
-      setError('Incorrect password.');
-    }
-  };
-
   return (
     <div className="Portfolio">
-
-      {/* Secret Button */}
-      <button className="secret-button" onClick={handleSecretClick} />
-
-      {/* Popup Password Prompt */}
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-box">
-            <h3>Enter Password</h3>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
-            {error && <p className="error">{error}</p>}
-            <div className="popup-buttons">
-              <button onClick={handlePasswordSubmit}>Submit</button>
-              <button onClick={() => setShowPopup(false)}>Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Navigation Bar */}
       <nav className="navbar">
         <ul>
-          <li><a href="#contact">Contact Info</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#experience">Work Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Techincal Skills</a></li>
         </ul>
+        <div className="social-links">
+          <a href="https://linkedin.com/in/will-susi" target="_blank" rel="noreferrer" title="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style={{ width: '28px', height: '28px' }} />
+          </a>
+          <a href="https://github.com/Will-Susi?tab=repositories" target="_blank" rel="noreferrer" title="GitHub">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" style={{ width: '28px', height: '28px' }} />
+          </a>
+        </div>
       </nav>
 
-      {/* Header */}
-      <header className="Portfolio-header"> William Susi's Portfolio</header>
-
-      {/* Contact Info */}
-      <section id="contact" className="section">
-        <h1>Contact Info</h1>
-        <p><u>Email</u>: willsusi14@gmail.com</p>
-        <p><u>Phone</u>: (978) 549-6089</p>
-        <p><u>LinkedIn</u>: <a href="https://linkedin.com/in/will-susi" style={{ color: "#0077b5" }} target="_blank" rel="noreferrer">linkedin.com/in/will-susi</a></p>
-        <p><u>Github</u>: <a href="https://github.com/Will-Susi?tab=repositories" style={{ color: "#0077b5" }} target="_blank" rel="noreferrer">https://github.com/Will-Susi?tab=repositories</a></p>
-      </section>
+      {/* Header & Contatc Info*/}
+      <header className="Portfolio-header">
+        <div>William Susi's Portfolio</div>
+        <div className="contact-info">
+          <a href="mailto:willsusi14@gmail.com" style={{ color: '#ffffff', textDecoration: 'none' }}>willsusi14@gmail.com</a>
+          <span style={{ margin: '0 15px', color: '#ffffff' }}>|</span>
+          <a href="tel:+19785496089" style={{ color: '#ffffff', textDecoration: 'none' }}>(978) 549-6089</a>
+        </div>
+      </header>
 
       {/* Education */}
       <section id="education" className="section">
