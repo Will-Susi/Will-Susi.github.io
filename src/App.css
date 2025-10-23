@@ -9,6 +9,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply fade-in animation to sections */
+.section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
 /* Secret Button*/
 .secret-button {
   position: fixed;
@@ -65,10 +91,12 @@ html {
 
 /* Top Bar Navigation */
 .navbar {
-  background-color: #000000;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   padding: 5px;
   position: sticky;
   top: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -82,19 +110,27 @@ html {
   color: #58a6ff;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
+  color: #79c0ff;
+  background-color: rgba(88, 166, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Portfolio */
 .Portfolio-header {
   text-align: center;
-  padding: 20px 20px;
-  background-color: #161b22;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   border-bottom: 1px solid #30363d;
   font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in;
 }
 
 .section {
@@ -106,13 +142,28 @@ html {
 }
 
 .section h1 {
-  color: #58a6ff;
-  margin-bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
   text-align: center;
+  font-size: 2em;
 }
 
 .entry {
   margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(22, 27, 34, 0.5);
+  border: 1px solid #30363d;
+  transition: all 0.3s ease;
+}
+
+.entry:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
 }
 
 .entry-header {
@@ -130,12 +181,45 @@ html {
 
 .entry-header h2 {
   margin-bottom: 0;
+  color: #79c0ff;
 }
 
 .date {
   color: #8b949e;
   white-space: nowrap;
   font-style: italic;
+}
+
+/* Link styling with accent colors */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #f093fb !important;
+  text-shadow: 0 0 8px rgba(240, 147, 251, 0.5);
+}
+
+/* Button styling */
+button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Underlined text accent colors */
+u {
+  text-decoration-color: #667eea;
+  text-decoration-thickness: 2px;
+}
+
+/* Strong text with subtle color */
+strong {
+  color: #e6edf3;
 }
 
 

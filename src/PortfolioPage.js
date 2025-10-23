@@ -9,8 +9,6 @@ function PortfolioPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
-
 
   const handleSecretClick = () => {
     setShowPopup(true);
@@ -19,7 +17,7 @@ function PortfolioPage() {
   };
 
   const handlePasswordSubmit = () => {
-    if (password === 'jobs') {
+    if (password === 'games') {
       setError('Correct password.');
     } else {
       setError('Incorrect password.');
