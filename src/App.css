@@ -222,6 +222,11 @@ html {
   scroll-margin-top: 60px; /* Keeps section headers visable after top bar navigation */
 }
 
+.section:last-child {
+  padding-bottom: 60px;
+  margin-bottom: 120px;
+}
+
 .section h1 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   -webkit-background-clip: text;
