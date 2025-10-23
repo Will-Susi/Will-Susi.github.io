@@ -15,16 +15,19 @@ function WorkExperienceEntry({ position, employmentType, company, location, time
   return (
     <div className="entry">
       <div className="entry-header">
-        {/* Position, Company, and Location */}
+        {/* Position */}
         <h2>
           <strong>{position}</strong>
-          {' at '}
-          {company}
-          {location && <i> ({location})</i>}
         </h2>
+      </div>
 
-        {/* Timeframe & Employment Type*/}
-        <span className="date">
+      {/* Company, Location, and Timeframe */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px', marginBottom: '15px' }}>
+        <p style={{ fontSize: '0.9em', color: '#8b949e', margin: 0 }}>
+          {company}
+          {location && <> • {location}</>}
+        </p>
+        <span className="date" style={{ fontSize: '0.9em' }}>
           {employmentType && <><i>{employmentType}</i> | </>}
           {timeframe}
         </span>
