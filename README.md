@@ -8,3 +8,4 @@
 
 `npm start` - This will start the React development server on http://localhost:3000 by default.
 
+To access on emulator: http://10.0.2.2:3000

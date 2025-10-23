@@ -27,11 +27,11 @@ function ProjectEntry({ name, timeframe, overview, skills, image, relevantLinks 
           </div>
         )}
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', flex: 1 }}>
+        <div className="project-header-content" style={{ display: 'flex', justifyContent: 'space-between', flex: 1 }}>
           {/* Name */}
           <h2 style={{ margin: 0, display: 'flex', alignItems: 'center' }}><strong>{name}</strong></h2>
           {/* Timeframe */}
-          <span className="date" style={{ display: 'flex', alignItems: 'center' }}>{timeframe}</span>
+          <span className="date" style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', marginLeft: '10px' }}>{timeframe}</span>
         </div>
       </div>
 

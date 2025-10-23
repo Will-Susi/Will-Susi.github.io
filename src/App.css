@@ -128,7 +128,7 @@ html {
 /* Top Bar Navigation */
 .navbar {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  padding: 15px 30px;
+  padding: 15px 10px;
   position: sticky;
   top: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -137,25 +137,25 @@ html {
   justify-content: center;
   align-items: center;
   min-height: 50px;
+  flex-wrap: wrap;
 }
 
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   list-style: none;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
-  max-width: calc(100% - 120px);
+  width: 100%;
 }
 
 .social-links {
   display: flex;
   gap: 15px;
   align-items: center;
-  position: absolute;
-  right: 20px;
+  margin-top: 10px;
 }
 
 .social-links a {
@@ -176,9 +176,9 @@ html {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
-  padding: 10px 16px;
+  padding: 8px 12px;
   border-radius: 4px;
-  font-size: 1.05em;
+  font-size: 0.95em;
 }
 
 .navbar a:hover {
@@ -215,7 +215,7 @@ html {
 }
 
 .section {
-  padding: 20px 20px;
+  padding: 20px;
   margin-left: 15%;
   margin-right: 15%;
   border-bottom: 1px solid #30363d;
@@ -308,10 +308,74 @@ strong {
   color: #e6edf3;
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .Portfolio-header {
+    font-size: 1.8em;
+    padding: 30px 15px;
+  }
 
+  .contact-info {
+    font-size: 0.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 
+  .contact-info span {
+    display: none;
+  }
 
+  .section {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 15px;
+  }
 
+  .section h1 {
+    font-size: 1.5em;
+  }
 
+  .navbar ul {
+    gap: 8px;
+  }
 
+  .navbar a {
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
 
+  .entry {
+    padding: 15px;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .entry-header h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  .entry-meta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 5px;
+  }
+
+  .entry-meta .date {
+    margin-left: 0 !important;
+  }
+
+  .project-header-content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .project-header-content .date {
+    margin-left: 0 !important;
+    margin-top: 5px;
+  }
+}

@@ -22,12 +22,12 @@ function WorkExperienceEntry({ position, employmentType, company, location, time
       </div>
 
       {/* Company, Location, and Timeframe */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px', marginBottom: '15px' }}>
+      <div className="entry-meta" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px', marginBottom: '15px' }}>
         <p style={{ fontSize: '0.9em', color: '#8b949e', margin: 0 }}>
           {company}
           {location && <> • {location}</>}
         </p>
-        <span className="date" style={{ fontSize: '0.9em' }}>
+        <span className="date" style={{ fontSize: '0.9em', whiteSpace: 'nowrap', marginLeft: '10px' }}>
           {employmentType && <><i>{employmentType}</i> | </>}
           {timeframe}
         </span>
