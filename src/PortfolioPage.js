@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import WorkExperienceEntry from './WorkExperienceEntry';
 import ProjectEntry from './ProjectEntry';
 import './App.css';
