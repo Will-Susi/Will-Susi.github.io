@@ -8,17 +8,31 @@ import React from 'react';
  * - timeframe (required): Project duration 
  * - overview (optional): String or array of strings for overview paragraphs
  * - skills (optional): String of comma-separated skills/technologies used
+ * - image (optional): Path to image file (e.g., './assets/fridgie_icon.png')
  * - relevantLinks (optional): Array of objects with 'info', 'text' and 'url' properties
  *   Example: [{ info: "View all docs here:", text: "Project Website", url: "https://..." }]
  */
-function ProjectEntry({ name, timeframe, overview, skills, relevantLinks }) {
+function ProjectEntry({ name, timeframe, overview, skills, image, relevantLinks }) {
   return (
     <div className="entry">
-      <div className="entry-header">
-        {/* Name */}
-        <h2><strong>{name}</strong></h2>
-        {/* Timeframe */}
-        <span className="date">{timeframe}</span>
+      <div className="entry-header" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        {/* Image: Small thumbnail inline with header on the left */}
+        {image && (
+          <div className="entry-image" style={{ flexShrink: 0 }}>
+            <img 
+              src={image}
+              alt={`${name} icon`}
+              style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }}
+            />
+          </div>
+        )}
+        
+        <div style={{ display: 'flex', justifyContent: 'space-between', flex: 1 }}>
+          {/* Name */}
+          <h2 style={{ margin: 0, display: 'flex', alignItems: 'center' }}><strong>{name}</strong></h2>
+          {/* Timeframe */}
+          <span className="date" style={{ display: 'flex', alignItems: 'center' }}>{timeframe}</span>
+        </div>
       </div>
 
       {/* Overview */}

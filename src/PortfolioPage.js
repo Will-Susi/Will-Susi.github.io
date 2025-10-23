@@ -5,9 +5,6 @@ import WorkExperienceEntry from './WorkExperienceEntry';
 import ProjectEntry from './ProjectEntry';
 import './App.css';
 
-import fridgieIcon from './assets/fridgie_icon.png'; // adjust path as needed
-
-
 function PortfolioPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [password, setPassword] = useState('');
@@ -144,6 +141,7 @@ function PortfolioPage() {
         <ProjectEntry
           name="Portfolio"
           timeframe="May 2025 - Current"
+          image={require('./assets/WS.png')}
           overview="The portfolio you are seeing now!"
           skills="React, JavaScript, HTML, CSS"
         />
@@ -151,6 +149,7 @@ function PortfolioPage() {
         <ProjectEntry
           name="Fridgie"
           timeframe="January 2025 - Current"
+          image={require('./assets/fridgie_icon.png')}
           overview={[
             "Fridgie is a mobile application designed to help users virtually track and organize food in their kitchens, aiming to reduce food waste and save money. The app is built with a React Native frontend that communicates with a Node.js backend API, which interacts with a PostgreSQL database to manage and retrieve data.",
             "This project began during my senior year as part of my Mobile Application Capstone, where I collaborated with three fellow UML students. Early in development, we submitted the project idea to the First DifferenceMaker 2025 competition. After advancing through multiple stages, we were awarded the S.E.E.D. award, which included funding to support the app’s development.",
@@ -165,6 +164,7 @@ function PortfolioPage() {
         <ProjectEntry
           name="Goose Gauntlet"
           timeframe="October 2024 - December 2024"
+          image={require('./assets/goose_guantlet_icon.png')}
           overview={[
             "Goose Gauntlet is an edutainment game where players construct words to defeat enemies, rewarding the player for forming more complex words. The game was designed with middle school students in mind, focusing on improving their spelling and vocabulary through an engaging and entertaining experience.",
             "The project was developed during my Software Engineering course in collaboration with four classmates using the Godot Engine. Accompanying the game is a comprehensive Software Requirements Specification (SRS) document detailing the entire design process, including system functionality descriptions and UML diagrams that outline the game’s structure and behavior.",  
@@ -177,6 +177,7 @@ function PortfolioPage() {
 
         <ProjectEntry
           name="Word Wizard"
+          image={require('./assets/word_wizard_icon.jpg')}
           timeframe="November 2024 - December 2024"
           overview="Word Wizard is an Android phrase game similar to the game Catchphrase, but with various small additions, such as custom categories. The project was developed during my Mobile Application course in collaboration with two classmates using Android Studio."
           skills="Java, Android Studio"
@@ -185,6 +186,7 @@ function PortfolioPage() {
         <ProjectEntry
           name="Terminal Games"
           timeframe="February 2024 - March 2024"
+          image={require('./assets/terminal_icon.png')}
           overview={[
             "A library containing various strategy and puzzle games that can be played through terminal IO.These games include Mordle (Extension of Wordle), Battleship, Mastermind, and Connect 4."
           ]}
