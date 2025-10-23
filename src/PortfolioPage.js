@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import JobApplicationsPage from './JobApplicationsPage';
+import WorkExperienceEntry from './WorkExperienceEntry';
+import ProjectEntry from './ProjectEntry';
 import './App.css';
 
 import fridgieIcon from './assets/fridgie_icon.png'; // adjust path as needed
@@ -22,7 +23,7 @@ function PortfolioPage() {
 
   const handlePasswordSubmit = () => {
     if (password === 'jobs') {
-      navigate('/job-applications');
+      setError('Correct password.');
     } else {
       setError('Incorrect password.');
     }
@@ -85,203 +86,125 @@ function PortfolioPage() {
           <span className="date">Graduated May 2025</span>
         </div>
         <p><u>GPA/Honors</u>: 3.88, Summa Cum Laude</p>
+        <p><u>Minors</u>: Mathematics</p>
         <p><u>Relevant Courses</u>: Computing I-IV (OOP, Data Structures, Algorithms), Software Engineering I, Mobile App Development I & II, Data Communications I, Assembly Language Programming, Computer Architecture, Operating Systems, Organization of Programming Languages, Discrete Mathematics I & II, Linear Algebra I</p>
+        <p><u>Clubs/Activities</u>: Club Soccer, Intramural Soccer</p>
       </section>
 
       {/* Work Exp */}
       <section id="experience" className="section">
         <h1>Work Experience</h1>
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Software Engineering Intern</strong> at SureScan Corporation <i>(Boxborough, MA)</i></h2>
-            <span className="date">May 2024 – June 2025</span>
-          </div>
+        
+        <WorkExperienceEntry
+          position="Software Engineering Intern"
+          employmentType="Internship"
+          company="SureScan Corporation"
+          location="Boxborough, MA"
+          timeframe="May 2024 – June 2025"
+          overview={[
+            "During this position, I was often assigned to different tasks based on project needs, though my primary focus was developing tools to assist the QA team.",
+            "One of my main projects was a database comparison tool designed to track data changes in a database before and after an operation. To achieve this, I used PostgreSQL’s pg_dump to export database snapshots pre- and post-operation, then utilized Bash’s diff command to compare the two dumps. Since diff outputs raw line-by-line differences, I wrote additional parsing code to interpret and categorize these results into clear summaries of insertions, deletions, and data modifications.",
+            "Another project I developed was a verification tool for validating the functionality of Threat Image Projection (TIP) on real-time baggage scans using the Detect 1000 scanner. This tool compared user-specified TIP parameters with the actual results from the Detect 1000 and provided visual feedback indicating the likelihood of malfunctions or incorrect deployments.",
+            "I also contributed to several smaller projects. I helped implement new features on an Angular-based web server that interfaced with the Detect 1000 system. Additionally, I assisted in building and integrating Python scripts with Qt services to construct a Threat Image Projection (TIP) library. Finally, I conducted research on migrating a Subversion-based repository system to Git, exploring best practices and potential challenges.",
+          ]}
+          skills="Qt, C++, PostgreSQL, Python, AngularJS, Restful APIs, Bash Scripting, Documentation"
+        />
 
-          <div className="entry-task">
-            <p><strong><u>Tasks</u>: </strong></p>
-            <ul>
-              <li>Helped build and integrate Python scripts with QT services in construction of a threat image projection library.</li>
-              <li>Designed a database comparison tool in QT that compares snapshots of database instances, showing data additions, deletions, and insertions to assist QA in debugging.</li>
-              <li>Engineered a QT script with Postgres database integration, automating the verification of test case results for the Detect 1000, improving accuracy and reducing processing time.</li>
-              <li>Implementing various functionality to an Angular web application.</li>
-            </ul>
-          </div>
+        <WorkExperienceEntry
+          position="Human-Robot Interaction Research Intern"
+          employmentType="Internship"
+          company="UML HRI Lab"
+          location="Lowell, MA"
+          timeframe="June 2022 – August 2022"
+          overview={[
+            "During this position, I researched and developed a prototype program for the U.S. Navy to evaluate the condition of components inside an electrical control box aboard a ship, using images captured by Boston Dynamics’ “Spot” robot. The goal was to automatically assess the state of three key components: the breaker switch (on/off), the fuse set (presence or absence of fuses), and the temperature gauges (approximate readings from two dials).",
+            "To achieve this, I applied a range of image processing techniques. To first locate the components within the box, I used feature detection with ORB descriptors and Brute-Force Matching for object recognition. These methods identify distinctive regions in the provided image and match them to a set of reference images to confirm an object’s presence. I also implemented thresholding, dilation, and erosion on the regions where the components were found, which helped distinguish foreground objects, fill gaps, and remove noise.",
+            "For the breaker switch, I analyzed the position of the tip of the switch relative to the top and bottom of the switch to determine whether it was on or off. For the fuse set, which was housed in a black box, I used color filtering and pixel analysis; an excess of black pixels indicated missing fuses. Finally, for the temperature gauges, I used color thresholding and geometric analysis to determine the direction the dials were pointing, convert their angular positions into numeric readings, and estimate the temperature within a few degrees.",
+          ]}
+          skills="Python, OpenCV, Computer Vision"
+        />
 
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>Qt, C++, PostgreSQL, Python, AngularJS</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Human-Robot Interaction Research Intern</strong> at UML HRI Lab <i>(Lowell, MA)</i></h2>
-            <span className="date">June 2022 – August 2022</span>
-          </div>
-
-          <div className="entry-task">
-            <p><strong><u>Tasks</u>: </strong></p>
-            <ul>
-              <li>Developed a Python script to assess electrical box components on Navy ships using images from Boston Dynamics “Spot” robot, automating inspections.</li>
-              <li>Applied advanced image processing techniques, including feature detection, thresholding, erosion, and dilation techniques to extrapolate components and subsequently their state/statuses.</li>
-            </ul>
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>Python, OpenCV, Computer Vision</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Sales Associate</strong> at TJMaxx <i>(Hudson, MA)</i></h2>
-            <span className="date">October 2019 – March 2020</span>
-          </div>
-
-          <div className="entry-task">
-            <p><strong><u>Tasks</u>: </strong></p>
-            <ul>
-              <li>Worked on the sales floor to organize and stock products, and assist customers in finding them.</li>
-              <li>Operated the cash register, processing transactions for customers.</li>
-            </ul>
-          </div>
-        </div>
+        <WorkExperienceEntry
+          position="Sales Associate"
+          employmentType="Part-Time"
+          company="TJMaxx"
+          location="Hudson, MA"
+          timeframe="October 2019 – March 2020"
+          tasks={[
+            "Worked on the sales floor to organize and stock products, and assist customers in finding them.",
+            "Operated the cash register, processing transactions for customers."
+          ]}
+        />
       </section>
 
       {/* Projects */}
       <section id="projects" className="section">
         <h1>Projects</h1>
 
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Portfolio</strong></h2>
-            <span className="date">May 2025 - Current</span>
-          </div>
+        <ProjectEntry
+          name="Portfolio"
+          timeframe="May 2025 - Current"
+          overview="The portfolio you are seeing now!"
+          skills="React, JavaScript, HTML, CSS"
+        />
 
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong> The portfolio you are seeing now!</p> 
-          </div>
+        <ProjectEntry
+          name="Fridgie"
+          timeframe="January 2025 - Current"
+          overview={[
+            "Fridgie is a mobile application designed to help users virtually track and organize food in their kitchens, aiming to reduce food waste and save money. The app is built with a React Native frontend that communicates with a Node.js backend API, which interacts with a PostgreSQL database to manage and retrieve data.",
+            "This project began during my senior year as part of my Mobile Application Capstone, where I collaborated with three fellow UML students. Early in development, we submitted the project idea to the First DifferenceMaker 2025 competition. After advancing through multiple stages, we were awarded the S.E.E.D. award, which included funding to support the app’s development.",
+            "With this funding and the combined efforts of our team, we continue to develop the application. Its features include item input through scanning items and receipts using AI, a virtual storage system to track items, notifications for foods nearing expiration, and smart grocery lists that track available items and allow for quick additions once items are purchased. While still in development, we aim to release the app soon and have ambitious plans for future features.",
+          ]}
+          relevantLinks={[
+            { info: "Stay up to date and see our progress here:", text: "Fridgie Website", url: "https://fridgieapp.com/" }
+          ]}
+          skills="React Native, ExpoGO, PostgreSQL, NodeJS"
+        />
 
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>React, JavaScript, HTML, CSS</p>
-          </div>
-        </div>
+        <ProjectEntry
+          name="Goose Gauntlet"
+          timeframe="October 2024 - December 2024"
+          overview={[
+            "Goose Gauntlet is an edutainment game where players construct words to defeat enemies, rewarding the player for forming more complex words. The game was designed with middle school students in mind, focusing on improving their spelling and vocabulary through an engaging and entertaining experience.",
+            "The project was developed during my Software Engineering course in collaboration with four classmates using the Godot Engine. Accompanying the game is a comprehensive Software Requirements Specification (SRS) document detailing the entire design process, including system functionality descriptions and UML diagrams that outline the game’s structure and behavior.",  
+          ]}
+          relevantLinks={[
+            { info: "Play the game and see all other related documents and materials here:", text: "Goose Gauntlet Website", url: "https://ltorrettor.github.io/GooseGauntlet/" }
+          ]}
+          skills="Python, Godot, SRS Document, UML Diagrams (Class, Sequence, State, Case)"
+        />
 
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Fridgie</strong></h2>
-            <span className="date">January 2025 - Current</span>
-          </div>
+        <ProjectEntry
+          name="Word Wizard"
+          timeframe="November 2024 - December 2024"
+          overview="Word Wizard is an Android phrase game similar to the game Catchphrase, but with various small additions, such as custom categories. The project was developed during my Mobile Application course in collaboration with two classmates using Android Studio."
+          skills="Java, Android Studio"
+        />
 
-          {/* <div className="entry-image">
-            <img 
-              src= {fridgieIcon}
-              alt="Fridgie app screenshot" 
-            />
-          </div> */}
+        <ProjectEntry
+          name="Terminal Games"
+          timeframe="February 2024 - March 2024"
+          overview={[
+            "A library containing various strategy and puzzle games that can be played through terminal IO.These games include Mordle (Extension of Wordle), Battleship, Mastermind, and Connect 4."
+          ]}
+          relevantLinks={[
+            { info: "See or download the code for the games here:", text: "Terminal Games Github", url: "https://github.com/Will-Susi/Terminal_Games" }
+          ]}
+          skills="C++, Makefile"
+        />
 
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong> Fridgie is a mobile application that allows users to virtually track and organize items in their fridge and pantries.</p> 
-          </div>
-
-          <div className="entry-highlights">
-            <p><strong><u>Highlights</u>: </strong></p>
-            <ul>
-              <li>Under development by myself and 3 fellow students from UML who were granted funding after winning the Rist DifferenceMaker S.E.E.D Fund Award.</li>
-              <li>Aims to reduce food waste by reminding the user to use items that are about to expire.</li>
-              <li>Built using a React Native frontend that communicates with a Node.js backend API, which in turn interacts with a PostgreSQL database to manage and retrieve data.</li>
-            </ul>
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>React Native, PostgreSQL, JIRA, ExpoGO, NodeJS</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Goose Guantlet</strong></h2>
-            <span className="date">October 2024 - December 2024</span>
-          </div>
-
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong>Goose Gauntlet is a game where the player progresses through levels, constructing words to defeat enemies, and rewarding the player for forming more difficult words.</p> 
-          </div>
-
-          <div className="entry-highlights">
-            <p><strong><u>Highlights</u>: </strong></p>
-            <ul>
-              <li>Along with this project is an in-depth Software Requirements Specification (SRS) document that outlines the complete design process.</li>
-              <li>A website was created containing this document and all other related materials, along with the development team, and a playable version: <a href="https://ltorrettor.github.io/GooseGauntlet/" style={{ color: "#0077b5" }} target="_blank" rel="noreferrer">Goose Gauntlet Website</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>Python, Godot, SRS Document, UML Diagrams (Class, Sequence, State, Case)</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Word Wizard</strong></h2>
-            <span className="date">November 2024 - December 2024</span>
-          </div>
-
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong>Word Wizard is an Android phrase game similar to the game Catchphrase, but with additons such as custom categories.</p> 
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>Java, Android Studio</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>2D Terminal Games</strong></h2>
-            <span className="date">February 2024 - March 2024</span>
-          </div>
-
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong>2D Terminal Games is a series of classic games that have my own twist on them and can be run and played within a terminal.</p> 
-          </div>
-
-          <div className="entry-highlights">
-            <p><strong><u>Games</u>: </strong></p>
-            <ul>
-              <li><i>Mordle</i>: Similar to New York Times game “Wordle” that allows the user to pick the number of guesses and the length of the word. Its functionality is supported by an algorithm for pattern matching that can distinguish between an exact, partial, or no match.</li>
-              <li><i>Battleship</i>: A replication of "Battleship" that allows for two players or the option to play the computer with an algorithm that makes it a formidable opponent, replicating actions similar to that of a real player.</li>
-            </ul>
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>C++, Makefile</p>
-          </div>
-        </div>
-
-        <div className="entry">
-          <div className="entry-header">
-            <h2><strong>Computing IV Portfolio</strong></h2>
-            <span className="date">January 2023 - May 2023</span>
-          </div>
-
-          <div className="entry-overview">
-            <p><strong><u>Overview</u>: </strong> A portfolio containing projects produced during Computing IV at the University of Massachusetts Lowell.</p> 
-          </div>
-
-          <div className="entry-highlights">
-            <p><strong><u>Projects</u>: </strong></p>
-            <ul>
-              <li><i>Text Generator</i>: A program that analyzes the frequency and distribution of substrings of varying lengths within provided text to generate novel text.</li>
-              <li><i>Log Parser</i>: A program that uses regular expression parsing techniques to analyze a complex log file, producing a legible report file.</li>
-              <li><i>DNA Comparison</i>: A program that uses dynamic programming to compare and align DNA sequences to figure out places of insertion and deletion of DNA substrings.</li>
-            </ul>
-          </div>
-
-          <div className="entry-skills">
-            <p><strong><u>Skills</u>: </strong>C++, SFML</p>
-          </div>
-        </div>
+        <ProjectEntry
+          name="Computing IV Portfolio"
+          timeframe="January 2023 - May 2023"
+          overview={[
+            "An extensive portfolio featuring projects designed to demonstrate and reinforce various software development practices. These projects are primarily developed in C++, with several incorporating graphical interfaces built using SFML. Each project includes detailed documentation that provides an overview of the project, discusses key design decisions, highlights skills learned, and reflects on the challenges encountered throughout development.",
+          ]}
+          relevantLinks={[
+            { info: "See the projects and detailed documentation here:", text: "Computing IV Portfolio Github", url: "https://github.com/Will-Susi/Computing-IV-Projects" }
+          ]}
+          skills="C++, SFML, LateX"
+        />
 
       </section>
 

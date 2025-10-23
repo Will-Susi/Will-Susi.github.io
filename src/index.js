@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 import PortfolioPage from './PortfolioPage';
-import JobApplicationsPage from './JobApplicationsPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +12,6 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<PortfolioPage/>} />
-        <Route path="/job-applications" element={<JobApplicationsPage/>} />
       </Routes>
     </Router>
   </React.StrictMode>
