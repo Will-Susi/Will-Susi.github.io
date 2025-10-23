@@ -136,7 +136,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   min-height: 50px;
 }
 
