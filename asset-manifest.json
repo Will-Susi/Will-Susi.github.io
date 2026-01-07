@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.574c12c7.css",
-    "main.js": "/static/js/main.790a68c2.js",
+    "main.js": "/static/js/main.60fa590d.js",
     "static/media/fridgie_icon.png": "/static/media/fridgie_icon.4ce6be7bf3cbdf7f4751.png",
     "static/media/word_wizard_icon.jpg": "/static/media/word_wizard_icon.e4ada7b4d49d3a676225.jpg",
     "static/media/terminal_icon.png": "/static/media/terminal_icon.ac7953dab659093bac35.png",
     "static/media/WS.png": "/static/media/WS.ebbc5e71549bbf808c3a.png",
     "index.html": "/index.html",
     "main.574c12c7.css.map": "/static/css/main.574c12c7.css.map",
-    "main.790a68c2.js.map": "/static/js/main.790a68c2.js.map"
+    "main.60fa590d.js.map": "/static/js/main.60fa590d.js.map"
   },
   "entrypoints": [
     "static/css/main.574c12c7.css",
-    "static/js/main.790a68c2.js"
+    "static/js/main.60fa590d.js"
   ]
 }
