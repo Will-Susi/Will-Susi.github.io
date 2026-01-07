@@ -49,6 +49,34 @@ function PortfolioPage() {
       {/* Work Exp */}
       <section id="experience" className="section">
         <h1>Work Experience</h1>
+
+        <WorkExperienceEntry
+          position="Software Development Engineer in Test"
+          employmentType="Full-Time"
+          company="Insulet"
+          location="Acton, MA"
+          timeframe="January 2026 – Current"
+          tasks={[
+            "Develop and maintain automated test scripts in Python for backend services, APIs, and web applications.",
+            "Build reusable Python modules and utilities to support scalable test automation.",
+            "Collaborate with software engineers, QA, and DevOps teams to integrate automated testing into Jenkins CI/CD pipelines.",
+            "Execute test plans, analyze test results, and document defects with clear and actionable reporting.",
+            "Participate in code reviews and contribute to improving test coverage, reliability, and automation frameworks."
+          ]}
+          skills="Python, Test Automation"
+        />
+
+        <WorkExperienceEntry
+          position="Behavior Demonstrator"
+          employmentType="Contract"
+          company="Boston Dynamics"
+          location="Waltham, MA"
+          timeframe="November 2025 – January 2026"
+          overview={[
+            "During this position, I was part of a team of other demonstrators who operated Boston Dynamics' Atlas humanoid robot through virtual reality, performing and recording complex real-world tasks. The demonstration data that was collected was used to train and teach the robot to perform those same tasks autonomously."
+          ]}
+          skills="Virtual Reality (VR), Robotics, Documentation, Scrum"
+        />
         
         <WorkExperienceEntry
           position="Software Engineering Intern"
@@ -86,8 +114,8 @@ function PortfolioPage() {
           location="Hudson, MA"
           timeframe="October 2019 – March 2020"
           tasks={[
-            "Worked on the sales floor to organize and stock products, and assist customers in finding them.",
-            "Operated the cash register, processing transactions for customers."
+            "Work on the sales floor to organize and stock products, and assist customers in finding them.",
+            "Operate the cash register, processing transactions for customers."
           ]}
         />
       </section>
